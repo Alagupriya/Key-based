@@ -1,0 +1,202 @@
+<!--div>Freshworks</div>
+
+
+      <form [formGroup] = "form" (ngSubmit) = "submit()">
+
+      <label>Key : </label>
+        <input type = "text" formControlName = "name"  />
+            <div *ngIf = "f.name.touched && f.name.invalid">
+                  <div *ngIf = "f.name.errors.required">
+                    <p>please enter the key</p>
+                  </div>
+                  <div *ngIf = "f.name.errors.pattern">
+                      <p >key must contain only characters</p>
+                  </div>
+                  <div *ngIf = "f.name.errors.maxlength ">
+                    <p >key length must not go beyond 32 characters.</p>
+                  </div>
+            </div>   &nbsp;
+ 
+
+              
+             
+              
+        <label>Value : </label>
+            <input type = "text" formControlName = "value" />
+                <div *ngIf = "f.value.touched && f.value.invalid">
+                      <div *ngIf = "f.value.errors.required">
+                        <p>please enter the value </p>
+                      </div>
+                      <div *ngIf = "f.value.errors.pattern">
+                          <p >value must contain only numbers</p>
+                      </div>
+                      <div *ngIf = "f.value.errors.maxlength ">
+                        <p >value length must not go beyond 16 kb.</p>
+                      </div>
+                </div>  &nbsp;
+             
+               
+              
+         <label> Living time : </label>
+               <input type = "text" formControlName = "min"  />
+                  <div *ngIf = "f.min.touched  && f.min.invalid"> 
+                      <div *ngIf = "f.min.errors.pattern">
+                        <p >key must contain only numbers</p>
+                      </div>
+                   </div>  &nbsp;
+           
+               
+          <button  type="button" class="btn btn-success btn-sm"  >Create</button>
+
+        </form>
+
+        <br>
+
+
+
+      <form [formGroup] = "rform" (ngSubmit) = "read()">
+            <label>Key: </label>
+                <input type = "text" formControlName = "rname" />
+                  <div *ngIf = "rf.rname.touched && rf.rname.invalid">
+                      <div *ngIf = "rf.rname.errors.required">
+                          <p>please enter the key</p>
+                      </div>
+                      <div *ngIf = "rf.rname.errors.pattern">
+                          <p >key must contain only characters</p>
+                      </div>
+                      <div *ngIf = "rf.rname.errors.maxlength ">
+                          <p >key length must not go beyond 32 characters.</p>
+                      </div>
+                  </div>  &nbsp;
+                       
+            <button type = "submit" type="button" class="btn btn-primary btn-sm" >Read</button>
+       </form>            
+       <br>
+
+
+
+        <form [formGroup] = "dform" (ngSubmit) = "delete()">
+            <label>Key : </label>
+                <input type = "text" formControlName = "dname" />
+                  <div *ngIf = "df.dname.touched && df.dname.invalid">
+                      <div *ngIf = "df.dname.errors.required">
+                          <p>please enter the key</p>
+                      </div>
+                      <div *ngIf = "df.dname.errors.pattern">
+                          <p >key must contain only characters</p>
+                      </div>
+                      <div *ngIf = "df.dname.errors.maxlength ">
+                        <p >key length must not go beyond 32 characters.</p>
+                      </div>
+                  </div>
+                      &nbsp;
+              <button type = "submit" type="button" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+ </p-->
+
+ 
+
+
+  <h1> Freshworks </h1> 
+ 
+ <div class="container">
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+<form [formGroup] = "form" (ngSubmit) = "submit()">
+            <label>Key : </label>&nbsp;
+            <input type = "text" formControlName = "name" />  <br>
+            <div *ngIf = "f.name.touched && f.name.invalid" class="col-sm-10">
+                            <div *ngIf = "f.name.errors.required" class="alert alert-warning">
+                              <p>please enter the key</p>
+                            </div>
+                            <div *ngIf = "f.name.errors.pattern" class="alert alert-warning">
+                                <p >key must contain only characters</p>
+                            </div>
+                            <div *ngIf = "f.name.errors.maxlength " class="alert alert-warning">
+                              <p >key length must not go beyond 32 characters.</p>
+                            </div>
+                      </div> 
+           <br>
+          
+        
+            <label>Value : </label>&nbsp;
+            <input type = "text" formControlName = "value" />
+            <br>
+            <div *ngIf = "f.value.touched && f.value.invalid" class="col-sm-10">
+              <div *ngIf = "f.value.errors.required" class="alert alert-warning">
+                <p>please enter the value </p>
+              </div>
+              <div *ngIf = "f.value.errors.pattern" class="alert alert-warning">
+                  <p >value must contain only numbers</p>
+              </div>
+              <div *ngIf = "f.value.errors.maxlength " class="alert alert-warning">
+                <p >value length must not go beyond 16 kb.</p>
+              </div>
+          </div> 
+          <br>
+          
+
+          
+            <label>  Time-to-live : </label>&nbsp;
+            <input type = "text" formControlName = "min" />  <br>
+            <div *ngIf = "f.min.touched  && f.min.invalid" class="col-sm-10"> 
+              <div *ngIf = "f.min.errors.pattern" class="alert alert-warning">
+                <p >key must contain only numbers</p>
+              </div>
+          </div> 
+          <br>
+         
+            
+  <button type = "submit" >Create</button>
+</form>
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+<form [formGroup] = "rform" (ngSubmit) = "read()">
+              <label>Key : </label> &nbsp;
+              <input type = "text" formControlName = "rname" />  <br>
+              <div *ngIf = "rf.rname.touched && rf.rname.invalid" class="col-sm-10">
+                <div *ngIf = "rf.rname.errors.required" class="alert alert-warning">
+                    <p>please enter the key</p>
+                </div>
+                <div *ngIf = "rf.rname.errors.pattern" class="alert alert-warning">
+                    <p >key must contain only characters</p>
+                </div>
+                <div *ngIf = "rf.rname.errors.maxlength " class="alert alert-warning">
+                    <p >key length must not go beyond 32 characters.</p>
+                </div>
+            </div> 
+            <br>
+  <button type = "submit"  >Read</button>
+</form>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+
+<form [formGroup] = "dform" (ngSubmit) = "delete()">
+                <label>
+                  Key : </label>&nbsp;
+                <input type = "text" formControlName = "dname" />
+
+                <br>
+                <div *ngIf = "df.dname.touched && df.dname.invalid" class="col-sm-10">
+                  <div *ngIf = "df.dname.errors.required" class="alert alert-warning">
+                      <p>please enter the key</p>
+                  </div>
+                  <div *ngIf = "df.dname.errors.pattern" class="alert alert-warning">
+                      <p >key must contain only characters</p>
+                  </div>
+                  <div *ngIf = "df.dname.errors.maxlength " class="alert alert-warning">
+                    <p >key length must not go beyond 32 characters.</p>
+                  </div>
+              </div>
+              <br>
+  <button type = "submit" >Delete</button>
+</form>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<div  class="col-sm-10" [hidden]="hid">
+  <p class="alert alert-success" > {{error}} </p>
+</div>
+
+</div>
+
+
